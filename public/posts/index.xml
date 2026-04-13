@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on My New Hugo Project</title>
+    <title>Posts on My Blog</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on My New Hugo Project</description>
+    <description>Recent content in Posts on My Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2026 15:11:27 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 18:29:14 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lorem Ipsum</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Thu, 09 Apr 2026 18:29:14 +0800</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hello World</title>
       <link>http://localhost:1313/posts/hello-world/</link>
