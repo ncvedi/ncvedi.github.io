@@ -182,15 +182,15 @@ async function main() {
   }
 
   #menu {
-    float: none;
-    width: auto;
-    margin: 0 0 18px;
-    text-align: left;
+    float: right;
+    width: 130px;
+    margin: 0 0 14px 16px;
+    text-align: right;
   }
 
   #menu li {
-    display: inline;
-    margin-right: 0.7em;
+    display: block;
+    margin-right: 0;
   }
 
   #left {
