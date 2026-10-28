@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neil Chaturvedi</title>
+  <meta name="description" content="Personal website and writings of Neil Chaturvedi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="column">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="site-brand">
+        <button class="domain-link" id="home-brand-btn" type="button">NEILCHATURVEDI.NET</button>
+      </div>
+      <div class="header-actions">
+        <button id="new-post-toggle" class="mono-btn" type="button">+ Write</button>
+        <button id="theme-toggle" class="mono-btn" type="button" aria-label="Toggle color theme">DARK</button>
+      </div>
+    </header>
+
+    <!-- WILLDEPUE.NET-style Top Index Directory -->
+    <nav class="index-directory" aria-label="Site Index">
+      <div class="section-label">
+        <span>Index /</span>
+      </div>
+      <ul class="index-rows" id="index-list">
+        <!-- Populated dynamically from 00. Neil Chaturvedi + Writings -->
+      </ul>
+
+      <!-- Inline Composer to quickly write & publish new posts -->
+      <form id="post-composer" class="composer-box">
+        <div class="section-label" style="margin-bottom: 0;">
+          <span>New Writing /</span>
+          <button type="button" id="close-composer-btn" class="back-btn">cancel ×</button>
+        </div>
+        <input
+          type="text"
+          id="post-title-input"
+          class="composer-input"
+          placeholder="Title of essay or note..."
+          required
+        />
+        <input
+          type="text"
+          id="post-date-input"
+          class="composer-input"
+          placeholder="Date (e.g. Oct 2026)"
+        />
+        <textarea
+          id="post-body-input"
+          class="composer-textarea"
+          placeholder="Write your post here. Separate paragraphs with a blank line..."
+          required
+        ></textarea>
+        <div class="composer-actions">
+          <span class="composer-hint">Saves immediately + copies code snippet for script.js</span>
+          <button type="submit" class="primary-btn">Publish Post</button>
+        </div>
+      </form>
+    </nav>
+
+    <!-- View 00: About & Light Background -->
+    <section id="view-home" class="view active">
+      <article class="block">
+        <div class="block-heading">
+          <span>00. Neil Chaturvedi</span>
+          <span>Singapore / Fontainebleau</span>
+        </div>
+
+        <div class="prose">
+          <p>
+            Hello! I’m Neil. I’m currently pursuing my <strong>Master in Management at INSEAD</strong> between Fontainebleau and Singapore, and working with <strong>EY’s Climate Change and Sustainability Services</strong> team in Singapore on ESG strategy and assurance.
+          </p>
+          <p>
+            Before INSEAD, I studied <strong>Electronics and Communications Engineering at BITS Pilani</strong>. Along the way, I built machine learning models and data pipelines to help predict preterm-birth risk for rural maternal care at <strong>Prashanu Hospital</strong>, and worked on cybersecurity and AI data-leakage prevention at <strong>Capgemini</strong>.
+          </p>
+          <p>
+            Outside of work, I spent much of my undergrad competitive debating with the BITS Pilani Debating Society, and whenever I get the chance I’m out motorbiking or off-road rallying.
+          </p>
+        </div>
+      </article>
+
+      <section class="block">
+        <div class="block-heading">
+          <span>Previously /</span>
+        </div>
+        <ul class="light-list">
+          <li class="light-item">
+            <div>
+              <span class="light-place">EY</span>
+              <span class="light-role">· Climate Change &amp; Sustainability Services</span>
+            </div>
+            <span class="light-meta">Singapore · 2026</span>
+          </li>
+          <li class="light-item">
+            <div>
+              <span class="light-place">INSEAD</span>
+              <span class="light-role">· Master in Management</span>
+            </div>
+            <span class="light-meta">Fontainebleau &amp; SG · 2025–27</span>
+          </li>
+          <li class="light-item">
+            <div>
+              <span class="light-place">Prashanu Hospital</span>
+              <span class="light-role">· Data Science</span>
+            </div>
+            <span class="light-meta">India · 2025</span>
+          </li>
+          <li class="light-item">
+            <div>
+              <span class="light-place">BITS Pilani</span>
+              <span class="light-role">· B.E. Electronics &amp; Communications</span>
+            </div>
+            <span class="light-meta">Pilani · 2021–25</span>
+          </li>
+          <li class="light-item">
+            <div>
+              <span class="light-place">Capgemini</span>
+              <span class="light-role">· Cybersecurity</span>
+            </div>
+            <span class="light-meta">Pune · 2023</span>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- View Post: Single Essay Reader inside the same centered column -->
+    <article id="view-post" class="view">
+      <div class="post-meta-line" id="reader-kicker">01. WRITING</div>
+      <h1 class="entry-title" id="reader-title"></h1>
+      <div class="prose" id="reader-body"></div>
+
+      <div class="post-footer-nav">
+        <button class="back-btn" id="reader-back-btn" type="button">← Back to 00. Neil Chaturvedi</button>
+        <button class="back-btn" id="delete-custom-post-btn" type="button" style="display: none;">Delete draft</button>
+      </div>
+    </article>
+
+    <!-- Minimal Footer -->
+    <footer class="site-footer">
+      <span>Neil Chaturvedi</span>
+      <div class="footer-links">
+        <button class="copy-email" data-email="neil.chaturvedi@insead.edu" type="button">neil.chaturvedi@insead.edu</button>
+        <button class="copy-email" data-email="neilcvedi@gmail.com" type="button">gmail</button>
+        <a href="https://www.linkedin.com/in/neilchaturvedi" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
+      </div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
