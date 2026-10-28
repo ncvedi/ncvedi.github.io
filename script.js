@@ -5,32 +5,21 @@
  */
 const DEFAULT_WRITINGS = [
   {
-    slug: 'notes-on-materiality',
-    title: 'What Actually Matters in Sustainability Reporting',
+    slug: 'on-off-road-and-attention',
+    title: 'On Off-Road Rallying and Attention',
     date: 'Oct 2026',
     paragraphs: [
-      'Spend enough time looking at corporate sustainability reports and a pattern emerges: the longest documents are rarely the clearest ones. When everything is treated as a headline priority, nothing truly is.',
-      'Working on materiality reviews across conglomerates and cross-border REITs in Singapore has made me appreciate the discipline of narrowing down. Good strategy—whether in capital allocation or climate advisory—is mostly about deciding which three or four variables genuinely move the needle for a business and measuring those with complete honesty.',
-      'As disclosure standards mature across Asia-Pacific, the shift from narrative storytelling toward auditable, board-level metrics is the most interesting problem in the room.'
-    ]
-  },
-  {
-    slug: 'small-data-in-rural-healthcare',
-    title: 'Predictive Models Where the Data Is Messy',
-    date: 'Jun 2025',
-    paragraphs: [
-      'When building preterm-birth risk models for rural maternal care, the hardest problem wasn’t choosing a model architecture—it was making sense of fragmented clinical records collected under real-world constraints.',
-      'In textbook machine learning, datasets arrive clean and stationary. In a hospital serving rural communities, missed follow-up appointments and incomplete lab histories are themselves vital clinical signals rather than mere noise to be dropped.',
-      'Simple, well-calibrated models paired with clear dashboards that clinicians actually trust will beat a black-box model every single time.'
-    ]
-  },
-  {
-    slug: 'off-road-and-attention',
-    title: 'On Off-Road Rallying and Attention',
-    date: 'Feb 2025',
-    paragraphs: [
       'One reason I love riding motorcycles off-road is that loose terrain leaves zero bandwidth for distraction. You look where you want the bike to go, weight the pegs, and react to what the front wheel is telling you.',
-      'Most modern work happens through layers of abstraction—spreadsheets, slide decks, terminals. Getting out on a trail is a useful counterweight: immediate physical feedback, calculated risk, and quiet focus.'
+      'Most modern life happens through layers of abstraction—screens, documents, and notifications. Getting out on a trail is a useful counterweight: immediate physical feedback, calculated risk, and quiet focus.'
+    ]
+  },
+  {
+    slug: 'what-debating-teaches-you',
+    title: 'What Competitive Debating Actually Teaches You',
+    date: 'May 2025',
+    paragraphs: [
+      'When you first start parliamentary debating, you think the goal is speaking quickly or sounding persuasive. After a few dozen rounds, you realize the real skill is structural listening: finding the single load-bearing assumption in someone else’s argument within fifteen minutes of preparation.',
+      'Being forced to defend positions you didn’t choose—and often personally disagree with—is one of the best antidotes to lazy thinking.'
     ]
   }
 ];
