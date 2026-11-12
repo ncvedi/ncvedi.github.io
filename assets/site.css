@@ -84,6 +84,15 @@ h1 { font-size: 34px; line-height: 1.15; letter-spacing: -.02em; margin: 22px 0 
   object-fit: cover;
   border-radius: calc(var(--w) * .135);
 }
+/* Dynamic Island */
+.phone::before {
+  content: ""; position: absolute; z-index: 1;
+  top: calc(var(--w) * .058); left: 50%;
+  width: calc(var(--w) * .29); height: calc(var(--w) * .085);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #000;
+}
 /* Soft reflection-free floor shadow */
 .phone::after {
   content: ""; position: absolute; left: 10%; right: 10%; bottom: -34px; height: 22px;
