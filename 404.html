@@ -29,6 +29,44 @@
   <p class="tagline">The page you were looking for isn’t here. It may have moved, or the link may have a typo.</p>
   <a class="badge" href="/">Go to the homepage</a>
 </main>
+<script>
+// A shared line, such as /line/hamlet/3.1.64: show the line, who says it and where, and offer to open it in
+// Illyria. Each work's lines are in /lines/<work>.json (Scripts/build_site_lines.py). Anything else stays a
+// plain "page not found".
+(function () {
+  var match = location.pathname.match(/^\/line\/([a-z0-9_-]+)\/([^\/]+)\/?$/i);
+  if (!match) return;
+  var workID = match[1], ref = decodeURIComponent(match[2]);
+  fetch("/lines/" + workID + ".json").then(function (response) {
+    if (!response.ok) throw new Error("no work");
+    return response.json();
+  }).then(function (work) {
+    var entry = work.lines[ref];
+    if (!entry) return;
+    var speaker = work.speakers[entry[1]] || "";
+    var parts = ref.split(".");
+    var place = "";
+    if (workID === "sonnets" && parts.length === 2) place = "Sonnet " + parts[0] + ", line " + parts[1];
+    else if (parts.length === 3) place = work.title + " " + ref;
+    else place = work.title;
+    // "Hamlet 3.1.64", not "Hamlet, Hamlet 3.1.64", when the speaker is the play's name.
+    var title = (speaker && speaker.toLowerCase() !== work.title.toLowerCase() ? speaker + ", " : "") + place;
+    document.title = title + " — Illyria";
+    var main = document.querySelector("main");
+    main.querySelector("h1").textContent = work.title;
+    main.querySelector("blockquote").textContent = "\u201c" + entry[0].replace(/^\[[^\]]*\]\s*/, "") + "\u201d";
+    main.querySelector("cite").textContent = title;
+    main.querySelector(".tagline").textContent = "Read it in context, with every word explained, in Illyria for iPhone and iPad.";
+    var open = main.querySelector(".badge");
+    open.textContent = "Open in Illyria";
+    open.setAttribute("href", "illyria://line/" + workID + "/" + encodeURIComponent(ref));
+    var home = document.createElement("p");
+    home.className = "fine";
+    home.innerHTML = '<a href="/">About Illyria</a>';
+    main.appendChild(home);
+  }).catch(function () {});
+})();
+</script>
 
 <footer class="col">
   <hr>
@@ -36,7 +74,7 @@
     <a href="/support.html">Support</a>
     <a href="/privacy-policy.html">Privacy Policy</a>
     <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
-    <a href="mailto:hi@illyria.app">Contact</a>
+    <a href="mailto:hello@illyria.app">Contact</a>
   </nav>
   <p>© 2026 Illyria</p>
   <p>Texts and LibriVox recordings are in the public domain. Illyria is an independent app and isn’t affiliated with Apple. Apple, iPhone and iPad are trademarks of Apple Inc.</p>
