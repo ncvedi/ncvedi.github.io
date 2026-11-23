@@ -55,54 +55,9 @@ h1 { font-size: 34px; line-height: 1.15; letter-spacing: -.02em; margin: 22px 0 
 }
 .fine { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
 
-/* Angled phone mockups */
-.stage {
-  position: relative;
-  display: flex; justify-content: center; align-items: center;
-  perspective: 1600px;
-  margin: 36px auto 0;
-  padding: 30px 0 70px;
-  max-width: 800px;
-}
-.phone {
-  --w: clamp(112px, 27vw, 220px);
-  position: relative;
-  width: var(--w);
-  aspect-ratio: 603 / 1311;
-  padding: calc(var(--w) * .035);
-  border-radius: calc(var(--w) * .17);
-  background: var(--bezel);
-  box-shadow:
-    inset 0 0 0 1.5px var(--bezel-edge),
-    0 2px 4px rgba(0,0,0,.15),
-    0 30px 60px -10px rgba(0,0,0,.35);
-  transform-style: preserve-3d;
-  flex: none;
-}
-.phone img {
-  display: block; width: 100%; height: 100%;
-  object-fit: cover;
-  border-radius: calc(var(--w) * .135);
-}
-/* Dynamic Island */
-.phone::before {
-  content: ""; position: absolute; z-index: 1;
-  top: calc(var(--w) * .058); left: 50%;
-  width: calc(var(--w) * .29); height: calc(var(--w) * .085);
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: #000;
-}
-/* Soft reflection-free floor shadow */
-.phone::after {
-  content: ""; position: absolute; left: 10%; right: 10%; bottom: -34px; height: 22px;
-  background: radial-gradient(ellipse at center, var(--floor), transparent 70%);
-  filter: blur(4px);
-  transform: translateZ(-1px);
-}
-.phone.left  { transform: rotateY(32deg) rotateZ(-2deg) translateX(calc(var(--w) * .38)) translateZ(-90px); z-index: 1; }
-.phone.mid   { transform: translateY(-14px) translateZ(40px); z-index: 2; }
-.phone.right { transform: rotateY(-32deg) rotateZ(2deg) translateX(calc(var(--w) * -.38)) translateZ(-90px); z-index: 1; }
+/* Device family: the iPad with an iPhone in front on each side, rendered by Scripts/render_site_hero.swift */
+.stage { display: block; max-width: 1000px; margin: 40px auto 8px; padding: 0 20px; }
+.stage img { display: block; width: 100%; height: auto; }
 
 /* Intro */
 .intro { font-size: 19px; text-align: center; margin: 4px 0 0; }
@@ -152,7 +107,7 @@ footer p { margin: 0 0 8px; }
   header { padding-top: 72px; }
   h1 { font-size: 30px; }
   .icon { width: 96px; height: 96px; border-radius: 22px; }
-  .stage { padding-bottom: 56px; }
+  .stage { margin-top: 32px; padding: 0 8px; }
 }
 
 /* Text pages: support and privacy policy */
